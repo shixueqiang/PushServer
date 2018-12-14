@@ -63,7 +63,7 @@ func setupRouter() *gin.Engine {
 
 func main() {
 	//开启mqtt订阅
-	args := []string{"mosquitto_sub", "-t", "test/topic", "-i", "client_a", "-q", "1", "-d"}
+	args := []string{"mosquitto_sub", "-h", "127.0.0.1", "-t", "topic/push", "-i", "client_push", "-q", "1", "-c", "-d"}
 	argc := C.int(len(args))
 	argv := make([]*C.char, argc)
 	for i, s := range args {
